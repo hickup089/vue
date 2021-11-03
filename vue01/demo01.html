@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fuck</title>
+
+</head>
+<body>
+<h1 id="test2">hello</h1>
+<!-- 这个就是view层 -->
+<div id="app">
+<!--   这个就是虚拟DOM，即时变化，都不需要刷新 -->
+   <h1>{{message}}</h1>
+    <h2>你好</h2>
+</div>
+</body>
+<!--导入vue-->
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+    var vm=new Vue({
+        el:"#app",
+
+        // model层
+        data:{
+            message:"hello vue"
+        }
+    });
+
+</script>
+</html>
