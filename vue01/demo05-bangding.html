@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-if="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <textarea type="text" v-model="message"></textarea>{{message}}
+    <input type="radio" name="sex" value="男" v-model="hick">男
+    <input type="radio" name="sex" value="女" v-model="hick">女
+    <p>{{hick}}</p>
+    <br/>
+    <select v-model="selected">
+        <option value="" disabled>---请选择</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <br/>
+    <p>{{selected}}</p>
+</div>
+</body>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+    var vm=new Vue({
+        el: "#app",
+        data:{
+            message:"123",
+            hick:'',
+            selected:''
+        }
+    });
+</script>
+</html>

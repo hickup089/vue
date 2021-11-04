@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>fuck</title>
@@ -8,10 +8,16 @@
 <body>
 <h1 id="test2">hello</h1>
 <!-- 这个就是view层 -->
+<!--<div id="app">-->
+<!--&lt;!&ndash;   这个就是虚拟DOM，即时变化，都不需要刷新 &ndash;&gt;-->
+<!--   <h1>{{message}}</h1>-->
+<!--    <h2>你好</h2>-->
+
+<!--</div>-->
 <div id="app">
-<!--   这个就是虚拟DOM，即时变化，都不需要刷新 -->
-   <h1>{{message}}</h1>
-    <h2>你好</h2>
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
 </div>
 </body>
 <!--导入vue-->

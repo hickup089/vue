@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-if="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    v-bind把item值赋给com-->
+    <hick v-for="item in items" v-bind:com="item">
+
+    </hick>
+</div>
+
+
+</body>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+
+    // 定义vue组件
+    Vue.component('hick',{
+        // v-bind和props的值绑定
+        props:['com'],
+        template:'<li>{{com}}</li>'
+    });
+
+    var vm=new Vue({
+        el: "#app",
+        data:{
+            items:["java","css","linux"]
+        }
+    });
+</script>
+</html>

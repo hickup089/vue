@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-if="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    <h1 v-if="ok">yes</h1>-->
+<!--    <h1 v-else>NO</h1>-->
+
+    <h1 v-if="type==='A'">A</h1>
+    <h1 v-else-if="type==='B'">B</h1>
+    <h1 v-else>{{type}}</h1>
+</div>
+</body>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+    var vm=new Vue({
+        el: "#app",
+        data:{
+            // #ok:true
+            type:'A'
+        }
+    });
+</script>
+</html>
