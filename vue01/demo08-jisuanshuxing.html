@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-if="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-clock]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-clock>
+<p>{{currentTime1()}}</p>
+</div>
+
+
+</body>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+
+    var vm=new Vue({
+      el:"#app",
+      data:{
+          message:"hell,hick"
+      },
+      methods: {
+          currentTime1:function () {
+              return Date.now(); // 返回一个时间戳
+          }
+      },
+      computed:{
+          currentTime2:function () { // computed和methods最好不要同名，它是一个属性，不是方法
+              this.message;
+              return Date.now(); // 返回一个时间戳
+          }
+      }
+    });
+</script>
+</html>

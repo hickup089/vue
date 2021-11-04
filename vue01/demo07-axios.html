@@ -12,10 +12,11 @@
     </style>
 </head>
 <body>
-<div id="app">
+<div id="app" v-clock>
 <li v-for="item in info">
 {{item}}
 </li>
+   <a v-bind:href="info.url">百度</a>
 </div>
 
 
@@ -34,7 +35,8 @@
                     min_position: null,
                     has_more_items: null,
                     items_html: null,
-                    ew_latent_count: null
+                    ew_latent_count: null,
+                    url:null
                 }
             }
         },

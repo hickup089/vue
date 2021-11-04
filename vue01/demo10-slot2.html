@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-if="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot2</title>
+    <style>
+        [v-clock]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-clock>
+    <todo>
+        我是四
+
+
+    </todo>
+    <girl></girl>
+    <mytitle slot="two"></mytitle>
+    <fuck slot="one"></fuck>
+</div>
+
+</body>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    Vue.component("girl",{
+        template:"<div>我是girl</div>"
+    });
+    Vue.component("mytitle",{
+        template: '<div>我是mytitle</div>'
+    });
+    Vue.component("fuck",{
+        template: '<div>我是fuck</div>'
+    });
+
+
+    Vue.component("todo",{
+        template:
+            '<div>\
+                 <slot name="one"></slot>\
+                     <slot name="two"></slot>\
+            </div>'
+    });
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            message:"hell,hick"
+        }
+    });
+</script>
+</html>
