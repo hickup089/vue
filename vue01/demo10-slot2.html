@@ -13,14 +13,15 @@
 </head>
 <body>
 <div id="app" v-clock>
+    <button @click="checko()">点击</button>
     <todo>
         我是四
 
 
     </todo>
-    <girl></girl>
+    <girl v-on:checko="checko()"></girl>
     <mytitle slot="two"></mytitle>
-    <fuck slot="one"></fuck>
+    <fuck slot="one" v-on:click="checko()"></fuck>
 </div>
 
 </body>
@@ -28,13 +29,20 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     Vue.component("girl",{
-        template:"<div>我是girl</div>"
+        props:[1],
+        template:'<div>我是girl<button @click="checkMyCom(1)">检查</button></div>',
+        methods:{
+            checkMyCom:function (){
+                //alert("我是checkMyCOm");
+                this.$emit('checko');
+            }
+        }
     });
     Vue.component("mytitle",{
         template: '<div>我是mytitle</div>'
     });
     Vue.component("fuck",{
-        template: '<div>我是fuck</div>'
+        template: '<div>我是fuck<button @click="checko()">检查</button></div>'
     });
 
 
@@ -48,7 +56,14 @@
     var vm=new Vue({
         el:"#app",
         data:{
-            message:"hell,hick"
+            message:"hell,hick",
+
+        },
+        methods:{
+            checko:function (index){
+                alert("everything is ok");
+                alert(index);
+            }
         }
     });
 </script>
